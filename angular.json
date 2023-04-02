@@ -3,16 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "projet_groupe_utilisateur": {
+    "workspace": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,18 +13,18 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/projet_groupe_utilisateur",
+            "outputPath": "dist/workspace",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -72,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "projet_groupe_utilisateur:build:production"
+              "browserTarget": "workspace:build:production"
             },
             "development": {
-              "browserTarget": "projet_groupe_utilisateur:build:development"
+              "browserTarget": "workspace:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "projet_groupe_utilisateur:build"
+            "browserTarget": "workspace:build"
           }
         },
         "test": {
@@ -93,13 +86,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -107,5 +99,7 @@
       }
     }
   },
-  "defaultProject": "projet_groupe_utilisateur"
+  "cli": {
+    "analytics": "786e042b-07b7-4b0b-abc1-efad87cdc87a"
+  }
 }

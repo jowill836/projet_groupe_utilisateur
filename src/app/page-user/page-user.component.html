@@ -1,0 +1,49 @@
+<form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">mon groupe
+          <div *ngIf="usr.grp_id!=null">groupe name: {{getmygrp()}}</div>
+          <button type="button" class="btn btn-primary" (click)="getOutGrp()">quitter</button>
+          <button type="button" class="btn btn-primary" (click)="newgrp()">new grp</button>
+          <button type="button" class="btn btn-primary" (click)="placementauto()">placement automatique</button>
+          <table *ngIf="teammates!=null" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let mate of teammates">
+                <td>{{mate.nameusr}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm">liste groupe
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Grp Name</th>
+                    <th scope="col">nb_places</th>
+                    <th scope="col">go in</th>
+                    <th scope="col">delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let grp of grpList">
+                    <td>{{grp.namegrp}}</td>
+                    <td *ngIf="grp.islast!=1">{{nbMax-grp.nbUser}}</td>
+                    <td *ngIf="grp.islast==1">{{dernierGrpMax-grp.nbUser}}</td>
+                    <td>
+                      <button type="button" class="btn btn-primary" (click)="getInGrp(grp.grp_id)">get in</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-primary" (click)="delGrp(grp.grp_id)">delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+</form>

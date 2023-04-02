@@ -1,0 +1,45 @@
+<form>
+    <div class="row justify-content-md-center">
+        <div class="col-4 justify-content-md-center">
+            <h1 class="text-center">ENTREPRISE</h1>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-4" style="box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">identifiant</label>
+            <input [(ngModel)]="credentials.username" name="username" type="email" id="form2Example1" class="form-control" />
+            
+            </div>
+        
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Mot de passe</label>
+            <input [(ngModel)]="credentials.password" name="password" type="password" id="form2Example2" class="form-control" />
+            
+            </div>
+            <button class="btn btn-primary" (click)="connect()">connecter</button>
+        
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> se souvenir </label>
+                </div>
+            </div>
+        
+            <div class="col">
+                <!-- Simple link -->
+                <a href="#!">mot de passe oublié?</a>
+            </div>
+            </div>
+        
+            <!-- Register buttons -->
+        </div>
+    </div>
+  </form>

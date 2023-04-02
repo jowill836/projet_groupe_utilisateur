@@ -1,0 +1,38 @@
+<form>
+    <div class="row justify-content-md-center gap-3">
+        <div class="col-4 justify-content-md-center">
+            <h1 class="text-center">Configuration</h1>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-8" style="box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 8px 11px 27px 4px rgba(0,0,0,0.75);">
+            <div class="row justify-content-md-center">
+                <div class="col-3 justify-content-md-center">
+                    <label for="">Nombres d'utilisateurs</label>
+                    <input [(ngModel)]="nbUsrInput" name="nbUsrInput" type="Number" (ngModelChange)="getNbGroupes(nbUsrInput)">
+                </div>
+                <div class="col-3 justify-content-md-center">
+                    <label for="">Nombre de groupes</label>
+                    <select [(ngModel)]="combinSelected" name="combinSelected" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option *ngFor="let combine of listecombinaisons" [ngValue]="combine">{{combine}}</option>
+                        
+                    </select>
+                </div>
+                <div class="col-3 justify-content-md-center">
+                    <label for="">Min/Max</label>
+                    <select [(ngModel)]="minmax" name="combinSelected" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option [ngValue]="0">{{minmaxOptions[0]}}</option>
+                        <option [ngValue]="1">{{minmaxOptions[1]}}</option>
+                        
+                    </select>
+                </div>
+                <div class="col-1 justify-content-md-center">
+                    <div class="row justify-content-md-center"><button class="btn btn-primary" (click)="updateConfiguration()">+</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
