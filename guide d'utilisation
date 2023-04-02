@@ -1,0 +1,4 @@
+avoir node.js d'installer sur sa machine
+-se placer dans le dossier workspace
+-effectuer la commande npm install
+-effectuer la commande npm run ng serve
